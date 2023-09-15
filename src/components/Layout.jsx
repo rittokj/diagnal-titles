@@ -7,13 +7,23 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useSelector } from 'react-redux';
+import SearchField from './SearchField';
 
 function Layout({ children }) {
 	const { title } = useSelector((state) => state.titles);
+
+	const scrollToTop = () => {
+		const element = document.getElementById('item1');
+		element.scrollIntoView({
+			behavior: 'smooth',
+			block: 'end',
+			inline: 'nearest',
+		});
+	};
+
 	return (
 		<Container maxWidth='md'>
 			<CssBaseline />
@@ -28,19 +38,13 @@ function Layout({ children }) {
 						<IconButton
 							size='large'
 							aria-label='search'
+							onClick={scrollToTop}
 							color='inherit'>
 							<ArrowBackIcon />
 						</IconButton>
 						<Typography variant='h5'>{title}</Typography>
 					</Typography>
-					<Box sx={{ display: 'block' }}>
-						<IconButton
-							size='large'
-							aria-label='search'
-							color='inherit'>
-							<SearchIcon />
-						</IconButton>
-					</Box>
+					<SearchField />
 				</Toolbar>
 			</AppBar>
 

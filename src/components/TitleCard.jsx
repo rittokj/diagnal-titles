@@ -1,37 +1,26 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
+import UnsplashImage from './UnsplashImage';
+import CardFooter from './CardFooter';
 
-const StyledFooter = styled(Grid)(({ theme }) => ({
-	position: 'absolute',
-	bottom: 0,
-	backgroundColor: theme.palette.background.default,
-	width: '100%',
-	padding: '0.5rem 0rem',
-}));
-
-const TitleCard = ({ item }) => {
+const TitleCard = ({ item, scrollPosition }) => {
 	return (
 		<Grid
+			style={{
+				aspectRatio: '2/3',
+			}}
 			container
 			position='relative'>
-			<Grid
-				item
-				xs={12}>
-				<img
-					src={`https://test.create.diagnal.com/images/${item['poster-image']}`}
-					alt='green iguana'
-					style={{
-						width: '100%',
-					}}
-				/>
-			</Grid>
-			<StyledFooter
+			<UnsplashImage
+				item={item}
+				scrollPosition={scrollPosition}
+			/>
+			<CardFooter
 				item
 				xs={12}>
 				<Typography variant='body1'>{item.name}</Typography>
-			</StyledFooter>
+			</CardFooter>
 		</Grid>
 	);
 };

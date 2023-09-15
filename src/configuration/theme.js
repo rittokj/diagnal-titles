@@ -13,6 +13,14 @@ export const darkTheme = createTheme({
 	},
 	typography: {
 		fontFamily: 'Titillium Web, sans-serif',
+		h5: {
+			fontWeight: '500',
+			fontSize: '2rem',
+		},
+		body1: {
+			fontWeight: '400',
+			fontSize: '1.25rem',
+		},
 	},
 	components: {
 		MuiAppBar: {

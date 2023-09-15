@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { Dashboard } from './page/dashboard/Dashboard';
+import Dashboard from './page/dashboard/Dashboard';
 import { Provider } from 'react-redux';
 
 import { store } from './store';
