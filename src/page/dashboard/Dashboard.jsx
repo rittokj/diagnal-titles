@@ -15,10 +15,9 @@ export function Dashboard() {
 		console.log('fetchData: ');
 		dispatch(getTitles());
 	};
-
 	useEffect(() => {
 		if (!isLoaded) fetchData();
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<Layout>
